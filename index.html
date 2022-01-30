@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <script defer src="script.js"></script>
+    <title>Кардио - Карта Твоих Тренировок</title>
+  </head>
+  <body>
+    <div class="sidebar">
+      <img src="/icon.png" alt="icon" class="icon" />
+
+      <ul class="workouts">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Тип</label>
+            <select class="form__input form__input--type">
+              <option value="running">Пробежка</option>
+              <option value="cycling">Велосипед</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Расстояние</label>
+            <input class="form__input form__input--distance" placeholder="км" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Длительность</label>
+            <input
+              class="form__input form__input--duration"
+              placeholder="мин"
+            />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Темп</label>
+            <input
+              class="form__input form__input--temp"
+              placeholder="шаг/мин"
+            />
+          </div>
+          <div class="form__row form__row--hidden">
+            <label class="form__label">Подъём</label>
+            <input
+              class="form__input form__input--climb"
+              placeholder="метров"
+            />
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+      </ul>
+    </div>
+
+    <div id="map"></div>
+  </body>
+</html>
